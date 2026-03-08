@@ -49,10 +49,9 @@ const App: React.FC = () => {
   const [bodyFontSize, setBodyFontSize] = useState<number>(14);
   const [showSettings, setShowSettings] = useState(false);
 
-  // Load history and settings on mount
   useEffect(() => {
     const savedHistory = localStorage.getItem('sham_history');
-    if (savedHistory) {
+    if (savedHistory) { 
       try {
         setHistory(JSON.parse(savedHistory));
       } catch (e) {
@@ -83,7 +82,6 @@ const App: React.FC = () => {
     setHistoryLimit(newLimit);
     localStorage.setItem('sham_history_limit', newLimit.toString());
     
-    // Truncate current history if it exceeds the new limit
     if (history.length > newLimit) {
       saveHistory(history.slice(0, newLimit));
     }
