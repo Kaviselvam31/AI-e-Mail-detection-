@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo } from 'react';
 import { analyzeEmail } from './services/geminiService';
 import { Label, AnalysisResult, EmailData, HistoryItem } from './types';
